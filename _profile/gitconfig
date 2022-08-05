@@ -1,0 +1,6 @@
+[alias]
+  g = git
+  s = status
+  p = pull
+  br = branch
+  co = checkout
