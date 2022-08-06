@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # refer: https://git-scm.com/download/linux
 
+source ./utils.sh
+
 user_config() {
   # global git config
   echo "[global]Type in your name of git config:"
@@ -42,6 +44,7 @@ then
     echo "git aleady exists, skipped"
   else
     # install git
+    info_success "Start to install git now"
     if command -v yum >/dev/null 2>&1  
     then
       yum install git
@@ -49,7 +52,7 @@ then
     then
       apt install git
     else
-      echo "Install git failed, commands not support"
+      echo "${RED}Install git failed, commands not support${NC}\\n"
     fi
   fi
 fi

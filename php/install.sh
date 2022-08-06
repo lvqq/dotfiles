@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source ./utils.sh
+
 # only support to install php on macOS
 if [ "$(uname -s)" == "Darwin" ]
 then
@@ -11,6 +13,7 @@ then
     echo ""
     if [[ $REPLY =~ ^[Yy]$ ]] 
     then
+      info_success "Start to install php@7.4 now"
       brew install php@7.4
       brew link php@7.4
     fi

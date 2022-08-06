@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source ./utils.sh
+
 install_dotfiles() {
   for plugin in ./*
   do
@@ -24,5 +26,5 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
   sh ./profile.sh
 else
-  echo "You can run 'sh profile.sh' to reawake the flow"
+  echo "${YELLOW}You can run 'sh profile.sh' to reawake the flow${NC}"
 fi;
