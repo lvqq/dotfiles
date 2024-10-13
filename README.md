@@ -10,6 +10,8 @@ cd dotfiles
 # 3. delete the directory of module u don't want to install
 # 4. run bootstrap
 sh bootstrap.sh
+# or run the specified install command such nvm:
+sh ./nvm/install.sh
 ```
 
 ## Shebang
@@ -35,7 +37,7 @@ All toolkits are optional
 - zsh
 - oh-my-zsh
 - zsh-autosuggestions
-- nvm@0.39.1
+- nvm
 
 ### Profile
 - .zshrc

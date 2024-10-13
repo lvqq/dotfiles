@@ -16,7 +16,7 @@ user_config() {
 
 workspace_config() {
   # workspace git config
-  read -p "Do you need to config git of a workspace? (y/n) " -n 1
+  read -p "Do you want to config git of a workspace? (y/n) " -n 1
   echo ""
   if [[ $REPLY =~ ^[Yy]$ ]] 
   then
@@ -57,7 +57,7 @@ then
   fi
 fi
 
-read -p "Do you need to config global git? (y/n) " -n 1
+read -p "Do you want to config global git? (y/n) " -n 1
 echo ""
 if [[ $REPLY =~ ^[Yy]$ ]] 
 then
