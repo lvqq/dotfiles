@@ -26,5 +26,5 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
   sh ./profile.sh
 else
-  echo "${YELLOW}You can run 'sh profile.sh' to reawake the flow${NC}"
+  info_warn "You can run 'sh profile.sh' to reawake the flow"
 fi;

@@ -12,27 +12,37 @@ cd dotfiles
 sh bootstrap.sh
 ```
 
+## Shebang
+Using other shebang such `Dash` may cause script errors, follow the steps to check it:
+```
+# 1. check which shell /bin/sh links actually
+ls -l /bin/sh
+
+# 2. If not bash, link it to bash
+sudo ln -sf /bin/bash /bin/sh
+```
+
 ## Support System
 - [x] MacOS
+- [x] Linux Debian - Ubuntu
 - [ ] Linux RedHat - CentOS
-- [ ] Linux Debian - Ubuntu
 
-## Toolkit
-> \* means optional while installing
+## Toolkits
+All toolkits are optional
 
-### MacOS
-- HomeBrew
-- iTerm2
-- *php@7.4
-
-### Common
+### Common toolkits
 - git
 - zsh
 - oh-my-zsh
 - zsh-autosuggestions
-- *nvm@0.39.1
+- nvm@0.39.1
 
 ### Profile
-- *.zshrc
-- *.gitconfig
-- *.gitconfig-[workspace]
+- .zshrc
+- .gitconfig
+- .gitconfig-[workspace]
+
+### MacOS Only
+- HomeBrew
+- iTerm2
+- php@7.4

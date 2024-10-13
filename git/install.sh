@@ -52,7 +52,7 @@ then
     then
       apt install git
     else
-      echo "${RED}Install git failed, commands not support${NC}\\n"
+      info_error "Install git failed, commands not support"
     fi
   fi
 fi

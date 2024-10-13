@@ -2,6 +2,12 @@
 
 source ./utils.sh
 
+install_php() {
+  info_success "Start to install php@7.4 now"
+  brew install php@7.4
+  brew link php@7.4
+}
+
 # only support to install php on macOS
 if [ "$(uname -s)" == "Darwin" ]
 then
@@ -9,13 +15,6 @@ then
   then
     echo "php aleady exists, skipped"
   else
-    read -p "Do you need to install php@7.4? (y/n) " -n 1
-    echo ""
-    if [[ $REPLY =~ ^[Yy]$ ]] 
-    then
-      info_success "Start to install php@7.4 now"
-      brew install php@7.4
-      brew link php@7.4
-    fi
+    install_confirm php@7.4 install_php
   fi
 fi
