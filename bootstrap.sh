@@ -2,6 +2,17 @@
 
 source ./utils.sh
 
+prepare() {
+  # detect curl
+  if command -v curl >/dev/null 2>&1
+  then
+    echo ""
+  else 
+    info_success "Start to install curl at first"
+    install_sys_pkg curl
+  fi
+}
+
 install_dotfiles() {
   for plugin in ./*
   do
@@ -16,6 +27,7 @@ install_dotfiles() {
   done
 }
 
+prepare
 install_dotfiles
 
 # run profile.sh after all install.sh finished

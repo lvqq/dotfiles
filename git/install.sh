@@ -11,7 +11,7 @@ user_config() {
   echo "[global]Type in your email address of git config:"
   read user_global_email
 
-  echo "\\n[user]\\n  name = $user_global_name\\n  email = $user_global_email" >> ./_profile/gitconfig
+  echo -e "\\n[user]\\n  name = $user_global_name\\n  email = $user_global_email" >> ./_profile/gitconfig
 }
 
 workspace_config() {
@@ -30,8 +30,8 @@ workspace_config() {
     read user_workspace_email
 
 
-    echo "[user]\\n  name = $user_workspace_name\\n  email = $user_workspace_email\\n" >> "./_profile/gitconfig-$workspace"
-    echo "[includeIf "gitdir:~/$workspace/"]\\n  path = ~/.gitconfig-$workspace\\n" >> "./_profile/gitconfig"
+    echo -e "[user]\\n  name = $user_workspace_name\\n  email = $user_workspace_email\\n" >> "./_profile/gitconfig-$workspace"
+    echo -e "[includeIf "gitdir:~/$workspace/"]\\n  path = ~/.gitconfig-$workspace\\n" >> "./_profile/gitconfig"
     echo "Now projects in the ~/$workspace/ directory uses git config of $user_workspace_name/$user_workspace_email"
   fi
 }
@@ -45,15 +45,7 @@ then
   else
     # install git
     info_success "Start to install git now"
-    if command -v yum >/dev/null 2>&1  
-    then
-      yum install git
-    elif command -v apt >/dev/null 2>&1 
-    then
-      apt install git
-    else
-      info_error "Install git failed, commands not support"
-    fi
+    install_sys_pkg git
   fi
 fi
 

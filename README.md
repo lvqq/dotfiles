@@ -34,6 +34,7 @@ All toolkits are optional
 
 ### Common toolkits
 - git
+- vim
 - zsh
 - oh-my-zsh
 - zsh-autosuggestions

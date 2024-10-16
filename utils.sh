@@ -26,3 +26,15 @@ install_confirm() {
     "$2"
   fi
 }
+
+install_sys_pkg() {
+  if command -v yum >/dev/null 2>&1  
+  then
+    yum -y install $1
+  elif command -v apt >/dev/null 2>&1 
+  then
+    sudo apt install $1
+  else
+    info_error "Install $1 failed, commands not support"
+  fi
+}
