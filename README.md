@@ -3,7 +3,7 @@ Here's my dotfiles config base mostly on zsh
 
 ## Usage
 ```bash
-# 1. clone the repo
+# 1. clone the repo or download the zip
 git clone https://github.com/lvqq/dotfiles.git
 # 2. enter the project
 cd dotfiles

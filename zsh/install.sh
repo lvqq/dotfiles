@@ -14,7 +14,7 @@ install_zsh() {
     fi
   elif command -v apt >/dev/null 2>&1 
   then
-    apt install zsh
+    sudo apt install zsh
     if [ $? -eq 0 ]; then
     echo -e "$success_msg"
     fi
